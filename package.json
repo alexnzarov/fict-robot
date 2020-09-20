@@ -1,0 +1,23 @@
+{
+  "name": "fict-robot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build:clean": "rm -rf ./dist",
+    "build": "tsc",
+    "start": "node ./dist/index.js",
+    "dev": "yarn run build:clean && yarn run build && yarn start"
+  },
+  "dependencies": {
+    "@types/node": "^14.11.1",
+    "dotenv": "^8.2.0",
+    "pg": "^8.3.3",
+    "telegraf": "^3.38.0",
+    "typeorm": "^0.2.26",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  }
+}
