@@ -6,6 +6,11 @@ import logger from "../core/logger";
 export default (): Middleware<IContextMessage> => async (ctx, next) => {
   const { from } = ctx;
   
+  if (!from) {
+    logger.warn("Received update without a 'from' object, ignoring...", { ctx });
+    return; 
+  }
+  
   let user = await User.findOne({ id: from.id });
   
   if (!user) {
